@@ -1,0 +1,127 @@
+<div class="body">
+  <app-header>
+    <div class="headerRow">
+      <div class="headerCol">
+        <div class="sandboxMenuContainer">
+          <a (click)="menuToggle($event)">
+            <i class="dds__icon dds__icon--menu-closed"></i>
+          </a>
+        </div>
+        <div class="sandboxLogoContainer">
+          <a
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <i
+              class="dds__icon dds__icon--brand-delltechnologies sandboxLogo"
+            ></i>
+          </a>
+        </div>
+      </div>
+      <div class="headerCol searchCol">
+        <dds-textinput
+          style="top: 4px; position: relative;"
+          elementId="fakeSearch"
+          icons="search"
+          iconClickable="true"
+          required="true"
+          classList="dds__input-text__container--sm"
+          (onIconClick)="fakeSearch($event)"
+        >
+        </dds-textinput>
+      </div>
+      <div class="headerCol">
+        <button
+          class="customHeaderButton dds__button dds__button--secondary dds__button--sm"
+          style="border: 0;"
+        >
+          <dds-badge value="4" units="items" pointer>
+            <i class="dds__icon dds__icon--cart"></i>
+          </dds-badge>
+        </button>
+        <dds-actionmenu ddsOptions='{"alignment": "end"}'>
+          <div action-trigger>
+            <button
+              class="customHeaderButton dds__button dds__button--secondary dds__button--sm"
+              style="border: 0;"
+            >
+              <dds-badge value="12" units="items" pointer>
+                <i class="dds__icon dds__icon--user"></i>
+              </dds-badge>
+            </button>
+          </div>
+          <dds-actionmenu-menu elementId="amMenu1" name="Pages">
+            <dds-actionmenu-item
+              elementId="amAction1"
+              icon="airplane"
+              (click)="menuAction()"
+            >
+              Accordion
+            </dds-actionmenu-item>
+          </dds-actionmenu-menu>
+
+          <dds-actionmenu-menu elementId="amCheck" separator="true">
+            Settings
+          </dds-actionmenu-menu>
+          <dds-actionmenu-item
+            elementId="viewRows"
+            checkbox="true"
+            icon="view-row"
+            value="rows"
+          >
+            Setting A
+          </dds-actionmenu-item>
+          <dds-actionmenu-item
+            elementId="viewCols"
+            checkbox="true"
+            checked="true"
+            icon="view-column"
+            value="columns"
+          >
+            Setting B
+          </dds-actionmenu-item>
+        </dds-actionmenu>
+      </div>
+    </div>
+  </app-header>
+  <main id="bodyMain">
+    <nav>
+      <!-- sidebar 1 content -->
+      <dds-sidenav
+        #sideNav
+        elementId="boxSidenav"
+        ddsOptions='{"expand": false}'
+        init="manual"
+      >
+        <dds-sidenav-menu
+          *ngFor="let tag of menuTags; index as t"
+          icon="dds__icon--{{ tags[tag] }}"
+          name="{{ tag.toUpperCase() }}"
+          open="false"
+        >
+          <ng-container *ngFor="let item of menuItems; index as i">
+            <dds-sidenav-item
+              tabindex="-1"
+              *ngIf="item.tags.includes(tag)"
+              [selected]="currentRoute === item.text.toLowerCase()"
+              icon="dds__icon--{{ item.icon }}"
+              [routerLink]="'/' + item.text.toLowerCase()"
+              [hidden]="item.hidden"
+            >
+              {{ item.text }}
+            </dds-sidenav-item>
+          </ng-container>
+        </dds-sidenav-menu>
+      </dds-sidenav>
+    </nav>
+    <!-- <aside>Global Right-side content</aside> -->
+    <!-- Main page content -->
+    <div class="content">
+      <div class="dds__container dds__pt-3">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </main>
+  <footer>footer</footer>
+</div>
