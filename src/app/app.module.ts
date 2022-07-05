@@ -69,6 +69,7 @@ import { IsSelectedDirective } from './lib/helpers/isselected.directive';
 import { MainLayoutComponent } from './core/layout/main-layout/main-layout.component';
 import { NavComponent } from './core/layout/nav/nav.component';
 import { OldLayoutComponent } from './core/layout/old-layout/old-layout.component';
+import { SearchComponent } from './pages/search/search.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
@@ -97,6 +98,7 @@ const appRoutes: Routes = [
   { path: 'tag', component: TagPageComponent },
   { path: 'textarea', component: TextAreaPageComponent },
   { path: 'textinput', component: TextInputPageComponent },
+  { path: 'search', component: SearchComponent },
 ];
 
 const components = [
@@ -152,12 +154,22 @@ const pages = [
   TagPageComponent,
   TextAreaPageComponent,
   TextInputPageComponent,
+  SearchComponent,
 ];
 
 const directives = [IsSelectedDirective];
 
 @NgModule({
-  declarations: [AppComponent, ...components, ...pages, ...directives, MainLayoutComponent, NavComponent, OldLayoutComponent],
+  declarations: [
+    AppComponent,
+    ...components,
+    ...pages,
+    ...directives,
+    MainLayoutComponent,
+    NavComponent,
+    OldLayoutComponent,
+    SearchComponent,
+  ],
   entryComponents: [...components],
   imports: [
     BrowserModule,

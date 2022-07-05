@@ -1,5 +1,10 @@
 import { Event, NavigationEnd, Router } from '@angular/router';
-import { AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  ElementRef,
+  ViewChild,
+} from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -12,18 +17,26 @@ export class MainLayoutComponent implements OnInit, AfterViewInit {
   public menuTags: Array<string> = [];
   public menuSorted: Array<any> = [];
   public menuItems: any = MENU_ITEMS;
+  public bcData: any = BREADCRUMB_DATA;
   public currentRoute: any;
   public tags: any = {
     home: `home`,
     search: `search`,
   };
-  constructor(private router: Router) {
+  constructor(private router: Router, private cdr: ChangeDetectorRef) {
     this.currentRoute = '';
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
         // Hide progress spinner or progress bar
         this.currentRoute = event.url.replace('/', '');
         // console.info(event);
+        this.bcData.push({
+          name: `${
+            this.currentRoute.charAt(0).toUpperCase() +
+            this.currentRoute.slice(1)
+          }`,
+          link: `#${this.currentRoute}`,
+        });
       }
     });
   }
@@ -103,5 +116,16 @@ const MENU_ITEMS = [
     route: '/search',
     tags: [],
     hidden: false,
+  },
+];
+
+const BREADCRUMB_DATA = [
+  {
+    link: '#',
+    name: 'Home',
+  },
+  {
+    link: '#',
+    name: 'Page',
   },
 ];
