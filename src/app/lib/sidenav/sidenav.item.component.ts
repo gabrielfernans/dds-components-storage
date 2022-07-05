@@ -3,14 +3,14 @@ import {
   Input,
   ElementRef,
   OnInit,
-  AfterViewInit
-} from "@angular/core";
-import { stringToBoolean, ddsLink, setElementId } from "../helpers/dds.helpers";
+  AfterViewInit,
+} from '@angular/core';
+import { stringToBoolean, ddsLink, setElementId } from '../helpers/dds.helpers';
 
 @Component({
   selector: `dds-sidenav-item`,
   templateUrl: `./sidenav.item.component.html`,
-  styleUrls: [`./sidenav.item.component.scss`]
+  styleUrls: [`./sidenav.item.component.scss`],
 })
 export class SidenavItemComponent implements OnInit, AfterViewInit {
   @Input() elementId: string = ``;

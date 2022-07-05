@@ -1,6 +1,6 @@
 <ng-template #content><ng-content></ng-content></ng-template>
 <ng-template #aContent>
-  <i tabindex="-1" *ngIf="icon && !svg" class="dds__icon {{icon}}"></i>
+  <i tabindex="-1" *ngIf="icon && !svg" class="dds__icon {{ icon }}"></i>
   <svg
     *ngIf="icon && svg"
     aria-hidden="true"
@@ -27,7 +27,7 @@
   <li
     tabindex="0"
     [id]="elementId"
-    class="dds__side-nav__item {{classList}}"
+    class="dds__side-nav__item {{ classList }}"
     [class.dds__side-nav__item--selected]="selected"
     [class.disabled]="disabled"
     [class.hidden]="hidden"

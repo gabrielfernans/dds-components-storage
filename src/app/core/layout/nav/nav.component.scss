@@ -1,0 +1,16 @@
+.nav-container-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 15px;
+  .logo-wrapper {
+    img {
+      height: 30px;
+
+      &:nth-child(1) {
+        margin-right: 6px;
+      }
+    }
+  }
+}

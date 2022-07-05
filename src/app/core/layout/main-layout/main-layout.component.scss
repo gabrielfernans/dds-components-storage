@@ -1,0 +1,34 @@
+.main-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  .content-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+    position: relative; /* ?? */
+    overflow-y: auto;
+    background-color: var(--background-grey);
+    .sidenav-container {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+    .screens-container {
+      position: absolute;
+      left: 220px;
+      flex-grow: 1;
+      height: 100vh;
+    }
+  }
+
+  footer {
+    height: 50px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid lightgray;
+  }
+}

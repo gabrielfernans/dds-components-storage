@@ -3,14 +3,14 @@ import {
   Input,
   ElementRef,
   OnInit,
-  AfterViewInit
-} from "@angular/core";
-import { stringToBoolean } from "../helpers/dds.helpers";
+  AfterViewInit,
+} from '@angular/core';
+import { stringToBoolean } from '../helpers/dds.helpers';
 
 @Component({
   selector: `dds-sidenav-menu`,
   templateUrl: `./sidenav.menu.component.html`,
-  styleUrls: [`./sidenav.menu.component.scss`]
+  styleUrls: [`./sidenav.menu.component.scss`],
 })
 export class SidenavMenuComponent implements OnInit, AfterViewInit {
   @Input() open: any = `false`;

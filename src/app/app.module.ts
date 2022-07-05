@@ -66,6 +66,9 @@ import { TooltipComponent } from './lib/tooltip/tooltip.component';
 
 // directives
 import { IsSelectedDirective } from './lib/helpers/isselected.directive';
+import { MainLayoutComponent } from './core/layout/main-layout/main-layout.component';
+import { NavComponent } from './core/layout/nav/nav.component';
+import { OldLayoutComponent } from './core/layout/old-layout/old-layout.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
@@ -154,7 +157,7 @@ const pages = [
 const directives = [IsSelectedDirective];
 
 @NgModule({
-  declarations: [AppComponent, ...components, ...pages, ...directives],
+  declarations: [AppComponent, ...components, ...pages, ...directives, MainLayoutComponent, NavComponent, OldLayoutComponent],
   entryComponents: [...components],
   imports: [
     BrowserModule,
