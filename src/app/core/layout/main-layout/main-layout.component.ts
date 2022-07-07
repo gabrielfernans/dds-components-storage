@@ -1,3 +1,4 @@
+import { BreadcrumbComponent } from './../../../lib/breadcrumb/breadcrumb.component';
 import { Event, NavigationEnd, Router } from '@angular/router';
 import {
   AfterViewInit,
@@ -13,11 +14,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-layout.component.scss'],
 })
 export class MainLayoutComponent implements OnInit, AfterViewInit {
+  @ViewChild(`breadcrumb`) breadcrumb!: BreadcrumbComponent;
   @ViewChild(`sideNav`) sideNav!: ElementRef<HTMLElement>;
   public menuTags: Array<string> = [];
   public menuSorted: Array<any> = [];
   public menuItems: any = MENU_ITEMS;
-  public bcData: any = BREADCRUMB_DATA;
+  public bcData: any = [
+    {
+      name: 'home',
+      link: '/',
+    },
+  ];
+  public bcIcon: any = 'home';
   public currentRoute: any;
   public tags: any = {
     home: `home`,
@@ -27,16 +35,31 @@ export class MainLayoutComponent implements OnInit, AfterViewInit {
     this.currentRoute = '';
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
-        // Hide progress spinner or progress bar
+        this.bcData = [this.bcData[0]];
         this.currentRoute = event.url.replace('/', '');
-        // console.info(event);
-        this.bcData.push({
-          name: `${
-            this.currentRoute.charAt(0).toUpperCase() +
-            this.currentRoute.slice(1)
-          }`,
-          link: `#${this.currentRoute}`,
-        });
+        this.bcIcon = this.currentRoute === '' ? 'home' : this.currentRoute;
+        this.bcData =
+          this.currentRoute === ''
+            ? [
+                ...this.bcData,
+                {
+                  name: `Home page`,
+                  link: `/`,
+                },
+              ]
+            : [
+                ...this.bcData,
+                {
+                  name: `${
+                    this.currentRoute.charAt(0).toUpperCase() +
+                    this.currentRoute.slice(1)
+                  }`,
+                  link: `/${this.currentRoute}`,
+                },
+              ];
+
+        this.breadcrumb.data = this.bcData;
+        console.log(this.bcData);
       }
     });
   }
@@ -112,20 +135,9 @@ const MENU_ITEMS = [
   },
   {
     icon: 'search',
-    text: 'Pesquisar',
+    text: 'Search',
     route: '/search',
     tags: [],
     hidden: false,
-  },
-];
-
-const BREADCRUMB_DATA = [
-  {
-    link: '#',
-    name: 'Home',
-  },
-  {
-    link: '#',
-    name: 'Page',
   },
 ];

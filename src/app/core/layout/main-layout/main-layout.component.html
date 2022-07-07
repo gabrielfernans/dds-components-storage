@@ -23,7 +23,11 @@
     </nav>
     <div class="screens-container">
       <div class="breadcrumb-container">
-        <dds-breadcrumb icon="home" [data]="bcData"></dds-breadcrumb>
+        <dds-breadcrumb
+          #breadcrumb
+          icon="home"
+          [data]="bcData"
+        ></dds-breadcrumb>
       </div>
       <div class="screens-content">
         <router-outlet></router-outlet>
