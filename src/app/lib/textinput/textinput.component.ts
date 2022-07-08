@@ -31,7 +31,7 @@ export class TextInputComponent extends DdsComponent implements OnChanges {
   @Input() iconClickable: any = `false`;
   @Input() disabled: any = `false`;
   @Input() required: any = `false`;
-  @Input() optionalText: string = ` (optional)`;
+  @Input() optionalText: string = '';
   public dataDds: string = ``;
   public iconList: Array<string> = [];
 

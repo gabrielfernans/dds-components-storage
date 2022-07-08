@@ -10,5 +10,44 @@
         <img src="/assets/img/ceowc-logo.png" alt="CEOWC Logo" />
       </div>
     </a>
+    <dds-textinput icons="search" placeholder="Search Domain"></dds-textinput>
   </div>
+
+  <div class="actions-container">
+    <dds-actionmenu ddsOptions='{"alignment": "end"}' icon="alarm-bell" title="Utility Item">
+      <div action-trigger>
+      </div>
+      <dds-actionmenu-menu elementId="amMenu1" name="Actions">
+        <dds-actionmenu-item
+          elementId="amAction1"
+          icon="copy-alt"
+          classList="customColor"
+          (onClicked)="actionMenuAction()"
+        >
+          Copy (has customColor)
+        </dds-actionmenu-item>
+      </dds-actionmenu-menu>
+
+    </dds-actionmenu>
+
+    <dds-actionmenu ddsOptions='{"alignment": "end"}' icon="user" title="Username">
+      <div action-trigger>
+      </div>
+      <dds-actionmenu-menu elementId="amMenu1" name="Actions">
+        <dds-actionmenu-item
+          elementId="amAction1"
+          icon="copy-alt"
+          classList="customColor"
+          (onClicked)="actionMenuAction()"
+        >
+          Copy (has customColor)
+        </dds-actionmenu-item>
+      </dds-actionmenu-menu>
+
+    </dds-actionmenu>
+
+  </div>
+
+
+
 </div>

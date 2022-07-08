@@ -20,6 +20,8 @@ export class ActionMenuComponent
   implements OnInit, OnDestroy
 {
   @Input() button: string = ``;
+  @Input() title: string = ``;
+  @Input() icon: string = ``;
   private menuService!: MenuService;
   private subscription!: Subscription;
 

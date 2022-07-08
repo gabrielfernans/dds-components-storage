@@ -5,8 +5,12 @@
   [class.attachButton]="button"
   [attr.data-trigger]="'#' + elementId + 'Trigger'"
 >
-  <div [id]="elementId + 'Trigger'">
+  <div [id]="elementId + 'Trigger'" class="trigger-label">
     <ng-content select="[action-trigger]"></ng-content>
+    <i class="dds__icon dds__icon--{{ icon }}"></i>
+          <span>{{ title }}</span>
+    <i class="dds__icon dds__icon--chevron-down"
+></i>
   </div>
   <div
     class="dds__action-menu__container dds__action-menu__container--hidden"

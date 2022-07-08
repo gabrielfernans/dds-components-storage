@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
+  enteredSearchValue: string = ""
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  actionMenuAction () {
+
+  }
+
+
+
+
 
 }

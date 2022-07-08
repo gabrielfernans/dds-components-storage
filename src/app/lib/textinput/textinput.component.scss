@@ -17,3 +17,22 @@
 .dds__textinput__icon--index3 {
   right: 4.5rem !important;
 }
+
+.dds__input-text  {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.dds__input-text__wrapper, .dds__input-text {
+  height: 35px;
+  i{
+    bottom: -6px;
+  }
+}
+
+
+
