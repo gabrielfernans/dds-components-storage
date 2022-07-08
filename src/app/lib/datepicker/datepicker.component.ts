@@ -1,6 +1,6 @@
-import { Component, EventEmitter, ElementRef, ViewChild, Input, Output } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { DdsComponent } from "../helpers/dds.component";
-import { debounce, stringToBoolean } from "../helpers/dds.helpers";
+import { stringToBoolean } from "../helpers/dds.helpers";
 
 @Component({
   selector: `dds-datepicker`,
@@ -14,6 +14,7 @@ export class DatePickerComponent extends DdsComponent {
   @Input() maxlength: string = `256`;
   @Input() helper: string = ``;
   @Input() fullClick: any = `false`;
+  @Input() click_confirm: any = `false`
   @Input() isDisabled: any = `false`;
   @Output() onChange: EventEmitter<any> = new EventEmitter<any>();
 
@@ -22,14 +23,18 @@ export class DatePickerComponent extends DdsComponent {
     this.ddsInitializer = `DatePicker`;
     this.required = stringToBoolean(this.required);
     this.fullClick = stringToBoolean(this.fullClick);
+    this.click_confirm = stringToBoolean(this.click_confirm)
     this.isDisabled = stringToBoolean(this.isDisabled);
+    this.placeholder = `mm/dd/yyyy`
   }
 
   override ngAfterViewInit(): void {
     super.ngAfterViewInit();
-    this.ddsElement.addEventListener(`ddsDatePickerSelectDateEvent`, (e: any) => {
-      this.onChange.emit(e.detail);
-    })
+    if(this.click_confirm) {
+        this.ddsElement.addEventListener(`ddsDatePickerSelectDateEvent`, (e: any) => {
+          this.onChange.emit(e.detail);
+      })
+    }
   }
 
   handleInput(e: any) {

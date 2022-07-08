@@ -14,7 +14,6 @@
     <input
       [disabled]="isDisabled"
       [class.fullClick]="fullClick"
-      (keydown)="handleInput($event)"
       (click)="handleInput($event)"
       (change)="handleChange($event)"
       [id]="elementId+'-input'"
@@ -25,6 +24,7 @@
       [required]="required"
       [attr.maxlength]="maxlength"
       [attr.aria-labelledby]="elementId + '-label ' + elementId + '-helper'"
+
     />
     <small [id]="elementId+'-helper'" class="dds__date-picker__helper">
       {{helper}}

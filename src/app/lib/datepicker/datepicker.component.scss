@@ -1,5 +1,11 @@
 ::ng-deep .isDisabled {
   .dds__date-picker__calendar-button {
     display: none;
+    
   }
+}
+
+.dds__date-picker__input {
+  border: none;
+  border-bottom: 1px solid var(--primary-grey);
 }
