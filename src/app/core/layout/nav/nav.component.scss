@@ -3,7 +3,6 @@
   justify-content: space-between;
   align-items: center;
   height: 60px;
-  padding: 0 25px 0 15px;
 
   .logo-container {
     display: flex;
@@ -11,14 +10,13 @@
     align-items: center;
     dds-textinput {
       width: 400px;
-
     }
   }
 
   .actions-container {
     display: flex;
     align-items: center;
-    gap: 20px
+    gap: 20px;
   }
 
   .logo-wrapper {

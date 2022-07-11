@@ -1,53 +1,55 @@
-<div class="nav-container-content">
-  <div class="logo-container">
-    <a
-      routerLink="/"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{ exact: true }"
-    >
-      <div class="logo-wrapper">
-        <img src="/assets/img/dell-logo.png" alt="DELL Logo" />
-        <img src="/assets/img/ceowc-logo.png" alt="CEOWC Logo" />
-      </div>
-    </a>
-    <dds-textinput icons="search" placeholder="Search Domain"></dds-textinput>
+<app-header>
+  <div class="nav-container-content">
+    <div class="logo-container">
+      <a
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <div class="logo-wrapper">
+          <img src="/assets/img/dell-logo.png" alt="DELL Logo" />
+          <img src="/assets/img/ceowc-logo.png" alt="CEOWC Logo" />
+        </div>
+      </a>
+      <dds-textinput icons="search" placeholder="Search Domain"></dds-textinput>
+    </div>
+
+    <div class="actions-container">
+      <dds-actionmenu
+        ddsOptions='{"alignment": "end"}'
+        icon="alarm-bell"
+        title="Utility Item"
+      >
+        <div action-trigger></div>
+        <dds-actionmenu-menu elementId="amMenu1" name="Actions">
+          <dds-actionmenu-item
+            elementId="amAction1"
+            icon="copy-alt"
+            classList="customColor"
+            (onClicked)="actionMenuAction()"
+          >
+            Copy (has customColor)
+          </dds-actionmenu-item>
+        </dds-actionmenu-menu>
+      </dds-actionmenu>
+
+      <dds-actionmenu
+        ddsOptions='{"alignment": "end"}'
+        icon="user"
+        title="Username"
+      >
+        <div action-trigger></div>
+        <dds-actionmenu-menu elementId="amMenu1" name="Actions">
+          <dds-actionmenu-item
+            elementId="amAction1"
+            icon="copy-alt"
+            classList="customColor"
+            (onClicked)="actionMenuAction()"
+          >
+            Copy (has customColor)
+          </dds-actionmenu-item>
+        </dds-actionmenu-menu>
+      </dds-actionmenu>
+    </div>
   </div>
-
-  <div class="actions-container">
-    <dds-actionmenu ddsOptions='{"alignment": "end"}' icon="alarm-bell" title="Utility Item">
-      <div action-trigger>
-      </div>
-      <dds-actionmenu-menu elementId="amMenu1" name="Actions">
-        <dds-actionmenu-item
-          elementId="amAction1"
-          icon="copy-alt"
-          classList="customColor"
-          (onClicked)="actionMenuAction()"
-        >
-          Copy (has customColor)
-        </dds-actionmenu-item>
-      </dds-actionmenu-menu>
-
-    </dds-actionmenu>
-
-    <dds-actionmenu ddsOptions='{"alignment": "end"}' icon="user" title="Username">
-      <div action-trigger>
-      </div>
-      <dds-actionmenu-menu elementId="amMenu1" name="Actions">
-        <dds-actionmenu-item
-          elementId="amAction1"
-          icon="copy-alt"
-          classList="customColor"
-          (onClicked)="actionMenuAction()"
-        >
-          Copy (has customColor)
-        </dds-actionmenu-item>
-      </dds-actionmenu-menu>
-
-    </dds-actionmenu>
-
-  </div>
-
-
-
-</div>
+</app-header>
