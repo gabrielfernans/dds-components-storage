@@ -1,5 +1,27 @@
 .attachAction {
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
+  border-radius: 2px;
   margin-right: -6px;
 }
+
+.dds__button {
+  padding: 4px 8px 4px 8px;
+  width: 100px;
+  height: 32px;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: normal;
+}
+.btn__secondary {
+    background-color: white;
+    color: #0672CB;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: normal;
+}
+
+.btn__secondary:not(:disabled):not(.dds__inactive):hover {
+  background-color: #F0F8FF;
+}
+
+
