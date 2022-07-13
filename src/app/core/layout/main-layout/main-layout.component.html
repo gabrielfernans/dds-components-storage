@@ -32,10 +32,28 @@
       <div class="screens-content">
         <router-outlet></router-outlet>
         <br>
-        <dds-button>Check In</dds-button>
-        <dds-button [disabled]="true">Check In</dds-button>
-        <dds-button classList="btn__secondary">Reset</dds-button>
-        <dds-button classList="btn__secondary" [disabled]="true">Reset</dds-button>
+        <dds-button>
+          Reset
+          <i class="dds__icon dds__icon--search dds__button__icon--end"></i>
+        </dds-button>
+        <dds-button classList="dds__button--tertiary">
+          <i class="dds__icon dds__icon--search dds__button__icon--start"></i>
+          Reset
+        </dds-button>
+        <dds-button classList="dds__button--md dds__button--secondary">
+          <i class="dds__icon dds__icon--search"></i>
+        </dds-button>
+        <dds-button classList="dds__button--destructive" [disabled]="true">
+          <i class="dds__icon dds__icon--search dds__button__icon--start"></i>
+          Reset
+        </dds-button>
+        <dds-button classList="dds__button--block">
+          <i class="dds__icon dds__icon--search dds__button__icon--start"></i>
+          Reset
+        </dds-button>
+        <app-card [title]="'Spring'" [icon]="'search'"></app-card>
+        <app-card [title]="'Search'" [icon]="'search'"></app-card>
+
 
       </div>
     </div>
