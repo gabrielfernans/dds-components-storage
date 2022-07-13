@@ -59,7 +59,7 @@ export class MainLayoutComponent implements OnInit, AfterViewInit {
               ];
 
         this.breadcrumb.data = this.bcData;
-        console.log(this.bcData);
+        console.log(this.currentRoute);
       }
     });
   }
@@ -123,6 +123,21 @@ export class MainLayoutComponent implements OnInit, AfterViewInit {
     // @ts-ignore
     this.sideNav.ddsComponent.toggle();
   }
+
+  isSelected(item: any): boolean {
+    if (item.childs.length === 0) {
+      return this.currentRoute === item.route.toLowerCase();
+    } else {
+      let flag = false;
+
+      item.childs.forEach((child: any) => {
+        if (this.currentRoute === child.route.toLowerCase()) {
+          flag = true;
+        }
+      });
+      return flag;
+    }
+  }
 }
 
 const MENU_ITEMS = [
@@ -130,14 +145,27 @@ const MENU_ITEMS = [
     icon: 'home',
     text: 'Home',
     route: '',
-    tags: [],
     hidden: false,
+    childs: [],
   },
   {
     icon: 'search',
     text: 'Search',
-    route: '/search',
-    tags: [],
+    route: 'search',
     hidden: false,
+    childs: [],
+  },
+  {
+    icon: 'hand-touch',
+    text: 'Button',
+    childs: [
+      {
+        icon: 'hand-touch',
+        text: 'Button',
+        route: 'button',
+        hidden: false,
+        childs: [],
+      },
+    ],
   },
 ];

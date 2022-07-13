@@ -20,6 +20,7 @@ export class SidenavMenuComponent implements OnInit, AfterViewInit {
   @Input() svg: any = `false`;
   @Input() hidden: any = `false`;
   @Input() classList: any = ``;
+  @Input() selected: any;
 
   constructor(private elRef: ElementRef) {}
 

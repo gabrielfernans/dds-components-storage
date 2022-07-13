@@ -1,7 +1,12 @@
 <ng-template #content><ng-content></ng-content></ng-template>
-<li *ngIf="name" class="dds__side-nav__group" [class.hidden]="hidden">
+<li
+  *ngIf="name"
+  class="dds__side-nav__group"
+  [class.hidden]="hidden"
+  [class.dds__side-nav__item--selected]="selected"
+>
   <button aria-haspopup="true" [attr.aria-expanded]="open">
-    <i *ngIf="icon && !svg" class="dds__icon {{icon}}"></i>
+    <i *ngIf="icon && !svg" class="dds__icon {{ icon }}"></i>
     <svg
       *ngIf="icon && svg"
       aria-hidden="true"
@@ -10,12 +15,12 @@
     >
       <use [attr.xlink:href]="'#' + icon"></use>
     </svg>
-    <span>{{name}}</span>
+    <span>{{ name }}</span>
   </button>
-  <ul class="dds__side-nav__menu {{classList}}">
+  <ul class="dds__side-nav__menu {{ classList }}">
     <ng-container *ngTemplateOutlet="content"></ng-container>
   </ul>
 </li>
-<ul *ngIf="!name" class="dds__side-nav__menu {{classList}}">
+<ul *ngIf="!name" class="dds__side-nav__menu {{ classList }}">
   <ng-container *ngTemplateOutlet="content"></ng-container>
 </ul>
