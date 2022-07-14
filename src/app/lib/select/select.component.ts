@@ -12,6 +12,7 @@ export class SelectComponent extends DdsComponent {
   @Input() defaultValue: string = ``;
   @Output() optionSelected: EventEmitter<string> = new EventEmitter<string>();
   private selectedValue: string = ``;
+  public indexSelected: number = -1;
 
   override ngOnInit() {
     super.ngOnInit();
@@ -20,6 +21,8 @@ export class SelectComponent extends DdsComponent {
 
   public onChange() {
     this.selectedValue = this.ddsElement.querySelector(`select`).value;
+    this.indexSelected = this.selectOptions.indexOf(this.selectedValue);
+    console.log(this.indexSelected)
     this.optionSelected.emit(this.selectedValue);
   }
 
