@@ -8,6 +8,4 @@ import { DdsComponent } from "../helpers/dds.component";
 })
 export class OverlayComponent extends DdsComponent {
 
-
-
 }
