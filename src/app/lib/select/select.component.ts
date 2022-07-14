@@ -3,7 +3,8 @@ import { DdsComponent } from "../helpers/dds.component";
 
 @Component({
   selector: `dds-select`,
-  templateUrl: `./select.component.html`
+  templateUrl: `./select.component.html`,
+  styleUrls: [`./select.component.scss`]
 })
 export class SelectComponent extends DdsComponent {
   @Input() selectOptions!: Array<string>;
@@ -21,4 +22,5 @@ export class SelectComponent extends DdsComponent {
     this.selectedValue = this.ddsElement.querySelector(`select`).value;
     this.optionSelected.emit(this.selectedValue);
   }
+
 }

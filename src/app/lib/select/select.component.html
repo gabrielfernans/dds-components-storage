@@ -8,6 +8,7 @@
       (change)="onChange()"
       class="dds__select__field"
     >
+      <option value="" class="dds__select__option--placeholder" selected=""></option>
       <option
         *ngFor="let va of selectOptions"
         value="{{ va }}"
