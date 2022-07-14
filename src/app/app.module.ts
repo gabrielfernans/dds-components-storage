@@ -70,6 +70,8 @@ import { MainLayoutComponent } from './core/layout/main-layout/main-layout.compo
 import { NavComponent } from './core/layout/nav/nav.component';
 import { OldLayoutComponent } from './core/layout/old-layout/old-layout.component';
 import { SearchComponent } from './pages/search/search.component';
+import { NotificationComponent } from './lib/notification/notification.component';
+import { OverlayComponent } from './lib/overlay/overlay.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
@@ -169,6 +171,8 @@ const directives = [IsSelectedDirective];
     NavComponent,
     OldLayoutComponent,
     SearchComponent,
+    NotificationComponent,
+    OverlayComponent,
   ],
   entryComponents: [...components],
   imports: [

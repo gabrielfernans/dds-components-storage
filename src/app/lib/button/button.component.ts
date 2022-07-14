@@ -12,9 +12,10 @@ export class ButtonComponent extends DdsComponent {
   @Input() action: string = ``; // for "attaching" the button to an ActionMenu.  Experimental.
   @Input() type: string = `text`;
   @Input() disabled: any = `false`;
-
+  
   override ngOnInit(): void {
     super.ngOnInit();
     this.disabled = stringToBoolean(this.disabled);
   }
 }
+ 
