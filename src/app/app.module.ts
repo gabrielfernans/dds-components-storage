@@ -70,6 +70,7 @@ import { MainLayoutComponent } from './core/layout/main-layout/main-layout.compo
 import { NavComponent } from './core/layout/nav/nav.component';
 import { OldLayoutComponent } from './core/layout/old-layout/old-layout.component';
 import { SearchComponent } from './pages/search/search.component';
+import { CardComponent } from './lib/card/card.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
@@ -169,6 +170,7 @@ const directives = [IsSelectedDirective];
     NavComponent,
     OldLayoutComponent,
     SearchComponent,
+    CardComponent,
   ],
   entryComponents: [...components],
   imports: [
