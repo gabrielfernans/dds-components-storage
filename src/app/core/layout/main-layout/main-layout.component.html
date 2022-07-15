@@ -28,9 +28,48 @@
           icon="home"
           [data]="bcData"
         ></dds-breadcrumb>
+
       </div>
       <div class="screens-content">
         <router-outlet></router-outlet>
+        <br>
+        <dds-button>
+          Reset
+          <i class="dds__icon dds__icon--search dds__button__icon--end"></i>
+        </dds-button>
+        <dds-button classList="dds__button--tertiary">
+          <i class="dds__icon dds__icon--search dds__button__icon--start"></i>
+          Reset
+        </dds-button>
+        <dds-button classList="dds__button--md dds__button--secondary">
+          <i class="dds__icon dds__icon--search"></i>
+        </dds-button>
+        <dds-button classList="dds__button--destructive" [disabled]="true">
+          <i class="dds__icon dds__icon--search dds__button__icon--start"></i>
+          Reset
+        </dds-button>
+        <dds-button>
+          Default
+        </dds-button>
+        <dds-button classList="dds__button--md">
+          Medium
+        </dds-button>
+        <dds-button classList="dds__button--sm">
+          Small
+        </dds-button>
+        <dds-button classList="dds__button--mini">
+          <i class="dds__icon dds__icon--search dds__button__icon--start"></i>
+          Mini
+        </dds-button>
+        <dds-button classList="dds__button--block">
+          <i class="dds__icon dds__icon--search dds__button__icon--start"></i>
+          Reset
+        </dds-button>
+        <app-card [title]="'Search'" [icon]="'search'"></app-card>
+        <app-card [title]="'User'" [icon]="'user'"></app-card>
+        <dds-notification></dds-notification>
+        
+    
       </div>
     </div>
   </div>

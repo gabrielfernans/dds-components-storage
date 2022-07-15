@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component} from '@angular/core';
 import { DdsComponent } from '../helpers/dds.component';
 
 @Component({
@@ -6,9 +6,8 @@ import { DdsComponent } from '../helpers/dds.component';
   templateUrl: './notification.component.html',
   styleUrls: ['./notification.component.scss']
 })
-export class NotificationComponent extends DdsComponent{
+export class NotificationComponent extends DdsComponent {
 
-  @Input() show: any = true;
-  
+
 
 }

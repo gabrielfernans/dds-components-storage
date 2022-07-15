@@ -17,5 +17,9 @@ export class ButtonComponent extends DdsComponent {
     super.ngOnInit();
     this.disabled = stringToBoolean(this.disabled);
   }
+
+  clicked() {
+    alert("Clicked works!")
+  }
 }
  

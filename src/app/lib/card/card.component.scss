@@ -1,0 +1,39 @@
+.dds__card {
+  display: flex;
+  width: 344px;
+  height: 211px;
+  border: 1px solid #E1E1E1;
+  margin-top: 24px;
+  margin-left: 25px;
+  margin-right: 25px;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dds__card__content {
+  width: 344px;
+  height: 211px;
+}
+
+.dds__icon {
+  font-size: 47px;
+  color: #6e6e6e;
+  padding: 35px 125px 58px 120px;
+}
+
+.dds__card__header__text {
+  align-items: center;
+  margin-top: 35px;
+}
+
+.dds__card__header__text h5 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  width: 51px;
+  height: 24px;
+}
+
+
+
