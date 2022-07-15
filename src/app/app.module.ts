@@ -51,6 +51,7 @@ import { LoadComponent } from './lib/load/load.component';
 import { MessageBarComponent } from './lib/messagebar/messagebar.component';
 import { ModalComponent } from './lib/modal/modal.component';
 import { MoreLessComponent } from './lib/moreless/moreless.component';
+import { NotificationComponent } from './lib/notification/notification.component';
 import { PaginationComponent } from './lib/pagination/pagination.component';
 import { PopoverComponent } from './lib/popover/popover.component';
 import { ProgressComponent } from './lib/progress/progress.component';
@@ -116,6 +117,7 @@ const components = [
   MessageBarComponent,
   ModalComponent,
   MoreLessComponent,
+  NotificationComponent,
   PaginationComponent,
   PopoverComponent,
   ProgressComponent,
