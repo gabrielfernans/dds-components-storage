@@ -44,6 +44,21 @@
       .select-large-container {
         width: 500px;
       }
+
+      .text-input-container {
+        height: auto;
+        width: auto;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+
+      .text-input-content {
+        display: flex;
+        align-items: flex-start;
+        justify-content: left;
+      }
+
     }
   }
 

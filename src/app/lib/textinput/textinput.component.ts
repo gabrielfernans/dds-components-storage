@@ -32,8 +32,10 @@ export class TextInputComponent extends DdsComponent implements OnChanges {
   @Input() disabled: any = `false`;
   @Input() required: any = `false`;
   @Input() optionalText: string = '';
+  @Input() buttonIcon: any = ``
   public dataDds: string = ``;
   public iconList: Array<string> = [];
+  public dataMask:string =  ``
 
   // @ts-ignore
   ngOnInit() {
@@ -49,6 +51,7 @@ export class TextInputComponent extends DdsComponent implements OnChanges {
       case `tel`:
         this.ddsInitializer = `InputMask`;
         this.dataDds = pascalDash(this.ddsInitializer);
+        this.dataMask = "(999) 999-9999"
         break;
     }
   }
@@ -63,6 +66,7 @@ export class TextInputComponent extends DdsComponent implements OnChanges {
 
   handleIconClick(e: any) {
     if (this.iconClickable) {
+      alert('click works!')
       this.onIconClick.emit({
         id: this.elementId,
         type: e.target.getAttribute(`data-type`),
@@ -74,13 +78,16 @@ export class TextInputComponent extends DdsComponent implements OnChanges {
   handleIconKeyup(e: any) {
     if (e.key === `Enter`) {
       this.handleIconClick(e);
+
     }
   }
 
   handleKeyupFinal(e: any) {
-    this.onKeyup.emit(
-      this.ddsElement.querySelector(`input`).value || undefined
-    );
+    if(e.key === 'Enter') {
+      this.onKeyup.emit(
+        this.ddsElement.querySelector(`input`).value || undefined
+      );
+      }
   }
 
   public handleKeyup = debounce((e: any) => this.handleKeyupFinal(e));

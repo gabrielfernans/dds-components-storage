@@ -5,6 +5,7 @@
   id="{{ elementId }}"
   class="dds__input-text__container {{ classList }}"
   [attr.data-dds]="dataDds"
+  [attr.data-mask]="dataMask"
 >
   <label id="{{ elementId }}-label" for="{{ elementId }}-input"
     >{{ label }}{{ required ? "" : optionalText }}</label
@@ -52,9 +53,10 @@
     </ng-container>
     <button
       *ngIf="button"
-      class="dds__button dds__button--primary dds__button--lg"
       type="submit"
-    >
+      class="dds__button dds__button--primary dds__button--lg"
+      >
+      <i class="dds__icon dds__icon--{{ buttonIcon }}"></i>
       {{ button }}
     </button>
     <small id="{{ elementId }}-helper" class="dds__input-text__helper">
