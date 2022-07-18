@@ -8,11 +8,12 @@
       (change)="onChange()"
       class="dds__select__field dds__selected__field--{{indexSelected}}"
     >
-      <option value="" class="dds__select__option--placeholder" selected=""></option>
+      <option value="" class="dds__select__option--placeholder dds__select__option" selected=""></option>
       <option
         *ngFor="let va of selectOptions"
         value="{{ va }}"
         [isSelected]="va===defaultValue ? 'true' : ''"
+        class="dds__select__option"
       >
         {{ va }}
       </option>
