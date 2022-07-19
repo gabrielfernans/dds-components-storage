@@ -1,0 +1,46 @@
+<div class="sidenav-item-container">
+  <div
+    class="sidenav-item-content"
+    (click)="item.expanded = !item.expanded; handleClick()"
+    [ngClass]="{
+      active: isActive(item),
+      opened: opened,
+      'child-group': child,
+      'child-page': child && item.type === 'page'
+    }"
+  >
+    <div
+      class="item-content-highlight"
+      [ngClass]="{ active: isActive(item) }"
+    ></div>
+    <div class="item-content-icon">
+      <i
+        *ngIf="item?.type === 'group'"
+        class="dds__icon dds__icon--{{ item?.icon }}"
+      ></i>
+    </div>
+    <div class="item-content-title" *ngIf="opened">
+      <span>{{ item?.title }}</span>
+    </div>
+    <div class="item-content-chevron" *ngIf="opened && item?.type === 'group'">
+      <ng-container *ngIf="item?.childs">
+        <i
+          *ngIf="!item?.expanded"
+          class="dds__icon dds__icon--chevron-down"
+        ></i>
+        <i *ngIf="item?.expanded" class="dds__icon dds__icon--chevron-up"></i>
+      </ng-container>
+    </div>
+  </div>
+  <ng-container *ngIf="item?.childs && opened && item?.expanded">
+    <ng-container *ngFor="let child of item?.childs">
+      <dds-sidenav-item
+        [item]="child"
+        [opened]="opened"
+        [currentRoute]="currentRoute"
+        [child]="true"
+        (switchState)="emitEvent()"
+      ></dds-sidenav-item>
+    </ng-container>
+  </ng-container>
+</div>

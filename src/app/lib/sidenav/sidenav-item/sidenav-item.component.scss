@@ -1,0 +1,68 @@
+.sidenav-item-container {
+  .sidenav-item-content {
+    display: grid;
+    width: 100%;
+    height: 56px;
+    grid-template-columns: 0.25rem 3.5rem;
+    color: var(--primary-grey);
+    cursor: pointer;
+
+    &.active {
+      background-color: var(--background-grey);
+    }
+    &.opened {
+      grid-template-columns: 0.25rem 3.5rem 10.5rem 3.75rem;
+    }
+    &.child-page {
+      background-color: var(--background-secondary);
+      border-top: 1px solid var(--primary-border);
+      border-bottom: 1px solid var(--primary-border);
+    }
+    &.child-group {
+      border-top: 1px solid var(--primary-border);
+    }
+    &:hover {
+      background-color: var(--primary-blue-hover);
+    }
+
+    &.active {
+      color: var(--primary-black);
+    }
+
+    .item-content-highlight {
+      display: flex;
+      align-items: center;
+      width: 0.25rem;
+
+      &.active {
+        background-color: var(--primary-blue);
+      }
+    }
+
+    .item-content-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 3.5rem;
+    }
+
+    .item-content-title {
+      display: flex;
+      align-items: center;
+      width: 10.5rem;
+
+      span {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .item-content-chevron {
+      display: flex;
+      align-items: center;
+      width: 3.75rem;
+      justify-content: center;
+    }
+  }
+}

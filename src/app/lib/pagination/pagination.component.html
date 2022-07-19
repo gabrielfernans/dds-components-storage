@@ -1,6 +1,6 @@
 <div
   [id]="elementId"
-  class="dds__pagination {{classList}}"
+  class="dds__pagination {{ classList }}"
   data-dds="pagination"
   role="navigation"
 >
@@ -9,7 +9,7 @@
       class="dds__pagination__per-page-label"
       [attr.for]="elementId + '-per-page'"
     >
-      {{labels.itemsPerPage}}
+      {{ labels.itemsPerPage }}
     </label>
     <div
       class="dds__select dds__select--sm dds__pagination__per-page-select"
@@ -18,8 +18,8 @@
       <div class="dds__select__wrapper">
         <select class="dds__select__field" [id]="elementId + '-per-page'">
           <ng-container *ngFor="let option of perPageOptions">
-            <option value="{{option}}">
-              {{option}}
+            <option value="{{ option }}">
+              {{ option }}
             </option>
           </ng-container>
         </select>
@@ -30,9 +30,9 @@
       -
       <span class="dds__pagination__range-end"></span>
       <span class="dds__pagination__range-total-label">
-        {{labels.of}}
+        {{ labels.of }}
         <span class="dds__pagination__range-total"></span>
-        {{labels.items}}
+        {{ labels.items }}
       </span>
     </div>
   </div>
@@ -43,16 +43,19 @@
     ></button>
     <button
       class="dds__button dds__button--tertiary dds__button--sm dds__pagination__prev-page"
+      style="margin-right: 0px"
       aria-label="Previous page"
     >
-      <span class="dds__pagination__prev-page-label">{{labels.previous}}</span>
+      <span class="dds__pagination__prev-page-label">{{
+        labels.previous
+      }}</span>
     </button>
     <div class="dds__pagination__page-range">
       <label
         class="dds__pagination__page-range-label"
         [attr.for]="elementId + '-current-page'"
       >
-        {{labels.page}}
+        {{ labels.page }}
       </label>
       <div class="dds__input-text__container dds__input-text__container--sm">
         <div
@@ -65,7 +68,10 @@
           />
         </div>
       </div>
-      <div class="dds__pagination__page-range-total-label">
+      <div
+        class="dds__pagination__page-range-total-label"
+        style="display: none"
+      >
         of
         <span class="dds__pagination__page-range-total"></span>
       </div>
@@ -73,8 +79,9 @@
     <button
       class="dds__button dds__button--tertiary dds__button--sm dds__pagination__next-page"
       aria-label="Next page"
+      style="margin-left: 0px"
     >
-      <span class="dds__pagination__next-page-label">{{labels.next}}</span>
+      <span class="dds__pagination__next-page-label">{{ labels.next }}</span>
     </button>
     <button
       class="dds__button dds__button--tertiary dds__button--sm dds__button__icon dds__pagination__last-page"

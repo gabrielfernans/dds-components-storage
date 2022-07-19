@@ -3,46 +3,9 @@
   <div class="content-container">
     <nav class="sidenav-container">
       <dds-sidenav
-        #sideNav
-        elementId="boxSidenav"
-        ddsOptions='{"expand": false}'
-        init="manual"
-      >
-        <ng-container *ngFor="let item of menuItems; index as i">
-          <ng-container *ngIf="item.childs.length === 0">
-            <dds-sidenav-item
-              tabindex="-1"
-              [selected]="isSelected(item)"
-              icon="dds__icon--{{ item.icon }}"
-              [routerLink]="'/' + item.route.toLowerCase()"
-              [hidden]="item.hidden"
-            >
-              {{ item.text }}
-            </dds-sidenav-item>
-          </ng-container>
-
-          <ng-container *ngIf="item.childs.length !== 0">
-            <dds-sidenav-menu
-              icon="dds__icon--{{ item.icon }}"
-              [selected]="isSelected(item)"
-              name="{{ item.text }}"
-              open="false"
-            >
-              <ng-container *ngFor="let child of item.childs">
-                <dds-sidenav-item
-                  tabindex="-1"
-                  [selected]="currentRoute === child.route.toLowerCase()"
-                  icon="dds__icon--{{ child.icon }}"
-                  [routerLink]="'/' + child.route.toLowerCase()"
-                  [hidden]="child.hidden"
-                >
-                  {{ child.text }}
-                </dds-sidenav-item>
-              </ng-container>
-            </dds-sidenav-menu>
-          </ng-container>
-        </ng-container>
-      </dds-sidenav>
+        [data]="menuItems"
+        [currentRoute]="currentRoute"
+      ></dds-sidenav>
     </nav>
     <div class="screens-container">
       <div class="breadcrumb-container">
@@ -54,43 +17,6 @@
       </div>
       <div class="screens-content">
         <router-outlet></router-outlet>
-        <br>
-        <dds-button>
-          Reset
-          <i class="dds__icon dds__icon--search dds__button__icon--end"></i>
-        </dds-button>
-        <dds-button classList="dds__button--tertiary">
-          <i class="dds__icon dds__icon--search dds__button__icon--start"></i>
-          Reset
-        </dds-button>
-        <dds-button classList="dds__button--md dds__button--secondary">
-          <i class="dds__icon dds__icon--search"></i>
-        </dds-button>
-        <dds-button classList="dds__button--destructive" [disabled]="true">
-          <i class="dds__icon dds__icon--search dds__button__icon--start"></i>
-          Reset
-        </dds-button>
-        <dds-button>
-          Default
-        </dds-button>
-        <dds-button classList="dds__button--md">
-          Medium
-        </dds-button>
-        <dds-button classList="dds__button--sm">
-          Small
-        </dds-button>
-        <dds-button classList="dds__button--mini">
-          <i class="dds__icon dds__icon--search dds__button__icon--start"></i>
-          Mini
-        </dds-button>
-        <dds-button classList="dds__button--block">
-          <i class="dds__icon dds__icon--search dds__button__icon--start"></i>
-          Reset
-        </dds-button>
-        <app-card [title]="'Search'" [icon]="'search'"></app-card>
-        <app-card [title]="'User'" [icon]="'user'"></app-card>
-
-
       </div>
     </div>
   </div>

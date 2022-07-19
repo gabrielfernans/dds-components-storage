@@ -1,20 +1,18 @@
-<section
-  class="dds__side-nav__wrapper {{ classList }}"
-  data-dds="side-nav"
-  id="{{ elementId }}"
->
-  <nav class="dds__side-nav" aria-label="Main Navigation">
-    <ng-content></ng-content>
-    <!-- <dds-sidenav-item class="dds__sidenav--sticky-hidden">
-      &nbsp;
-    </dds-sidenav-item> -->
-  </nav>
-  <div class="dds__side-nav__toggle">
-    <button type="button" aria-label="collapse">
-      <i class="dds__icon dds__icon--chevron-left"></i>
-    </button>
-    <button type="button" aria-label="expand">
-      <i class="dds__icon dds__icon--chevron-right"></i>
+<div class="sidenav-container" [ngClass]="{ opened: opened }">
+  <div class="sidenav-content">
+    <ng-container *ngFor="let item of data">
+      <dds-sidenav-item
+        [opened]="opened"
+        [currentRoute]="currentRoute"
+        [item]="item"
+        (switchState)="switchState()"
+      ></dds-sidenav-item>
+    </ng-container>
+  </div>
+  <div class="sidenav-footer">
+    <button (click)="opened = !opened">
+      <i *ngIf="opened" class="dds__icon dds__icon--chevron-left"></i>
+      <i *ngIf="!opened" class="dds__icon dds__icon--chevron-right"></i>
     </button>
   </div>
-</section>
+</div>

@@ -1,20 +1,20 @@
-import { Component, Input } from "@angular/core";
-import { DdsComponent } from "../helpers/dds.component";
+import { Component, Input } from '@angular/core';
+import { DdsComponent } from '../helpers/dds.component';
 
 @Component({
   selector: `dds-pagination`,
-  templateUrl: `./pagination.component.html`
+  templateUrl: `./pagination.component.html`,
 })
 export class PaginationComponent extends DdsComponent {
   @Input() perPageOptions: any = [5, 10, 15];
   @Input() perPageSelected: any = 10;
   @Input() labels: any = {
-    next: `Next`,
+    // next: `Next`,
     of: `of`,
     page: `Page`,
-    previous: `Previous`,
+    // previous: `Previous`,
     items: `items`,
-    itemsPerPage: `Items per page`,
+    // itemsPerPage: `Items per page`,
   };
 
   override ngOnInit(): void {
@@ -27,5 +27,4 @@ export class PaginationComponent extends DdsComponent {
       this.perPageSelected = Number(this.perPageSelected);
     }
   }
-
 }

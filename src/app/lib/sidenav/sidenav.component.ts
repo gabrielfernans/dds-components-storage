@@ -1,22 +1,20 @@
-import { Component, Input } from "@angular/core";
-import { DdsComponent } from "../helpers/dds.component";
-import { stringToBoolean, debounce, ddsIcon } from "../helpers/dds.helpers";
-import { handleResize } from "../helpers/mediasize";
-
-const icons: any = {
-  left: ddsIcon(`chevron-left`),
-  right: ddsIcon(`chevron-right`)
-};
+import { Component, Input, OnInit } from '@angular/core';
+import { ISidenavItem } from 'src/app/core/models/sidenav.model';
 
 @Component({
   selector: `dds-sidenav`,
   templateUrl: `./sidenav.component.html`,
-  styleUrls: [`./sidenav.component.scss`]
+  styleUrls: [`./sidenav.component.scss`],
 })
-export class SidenavComponent extends DdsComponent {
-  // @ts-ignore
-  ngOnInit() {
-    super.ngOnInit();
-    this.ddsInitializer = `SideNav`;
+export class SidenavComponent implements OnInit {
+  @Input() data?: ISidenavItem[];
+  @Input() currentRoute?: string;
+  opened: boolean = false;
+  constructor() {}
+
+  ngOnInit() {}
+
+  switchState(): void {
+    this.opened = !this.opened;
   }
 }
