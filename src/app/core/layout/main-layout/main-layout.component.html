@@ -33,21 +33,7 @@
         <router-outlet></router-outlet>
         <br>
 
-        <div class="select-container">
-          <dds-select
-            [label]="'Content ID'"
-            [selectOptions]="['Starts', 'Ends', 'Substring', 'Matches', 'Not Matches']"
-          ></dds-select>
-          <dds-select
-              [label]="'Title'"
-              [selectOptions]="['Starts', 'Ends', 'Substring', 'Matches', 'Not Matches']"
-          ></dds-select>
-          <div class="select-large-container">
-            <dds-select
-              [label]="'Large Select'"
-              [selectOptions]="['Opção 1', 'Opção 2', 'Opção 3']"></dds-select>
-          </div>
-        </div>
+        <dds-load></dds-load>
       </div>
 
     </div>

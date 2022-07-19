@@ -18,9 +18,9 @@ import { setElementId } from "../helpers/dds.helpers";
 export class LoadComponent extends DdsComponent implements OnInit, OnChanges {
   @ViewChild(`loadRef`) loadRef!: ElementRef<HTMLElement>;
   @Input() label: string = `Loading`;
-  @Input() mode: string = `global`;
-  @Input() placement: string = `top`;
-  @Input() size: string = `sm`;
+  @Input() mode: string = `inline`;
+  @Input() placement: string = `bottom`;
+  @Input() size: string = `xl`;
   public stateOn: boolean = true;
 
   override ngOnInit(): void {

@@ -8,6 +8,8 @@ import {
 } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 
+import { LoadComponent } from 'src/app/lib/load/load.component';
+
 @Component({
   selector: 'app-main-layout',
   templateUrl: './main-layout.component.html',
@@ -16,6 +18,7 @@ import { Component, OnInit } from '@angular/core';
 export class MainLayoutComponent implements OnInit, AfterViewInit {
   @ViewChild(`breadcrumb`) breadcrumb!: BreadcrumbComponent;
   @ViewChild(`sideNav`) sideNav!: ElementRef<HTMLElement>;
+  @ViewChild(`load`) load!: LoadComponent;
   public menuTags: Array<string> = [];
   public menuSorted: Array<any> = [];
   public menuItems: any = MENU_ITEMS;
@@ -123,6 +126,10 @@ export class MainLayoutComponent implements OnInit, AfterViewInit {
     // @ts-ignore
     this.sideNav.ddsComponent.toggle();
   }
+
+  loadToggle() {
+    this.load.toggle()
+  }
 }
 
 const MENU_ITEMS = [
@@ -141,3 +148,5 @@ const MENU_ITEMS = [
     hidden: false,
   },
 ];
+
+
