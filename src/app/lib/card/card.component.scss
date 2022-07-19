@@ -2,7 +2,7 @@
   display: flex;
   width: 344px;
   height: 211px;
-  border: 1px solid #E1E1E1;
+  border: 1px solid var(--background-grey);
   margin-top: 24px;
   margin-left: 25px;
   margin-right: 25px;
@@ -18,7 +18,7 @@
 
 .dds__icon {
   font-size: 47px;
-  color: #6e6e6e;
+  color: var(--primary-grey);
   padding: 35px 125px 58px 120px;
 }
 
