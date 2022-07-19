@@ -1,18 +1,17 @@
-import { Component, Input, OnInit } from "@angular/core";
-import { DdsComponent } from "../helpers/dds.component";
-import { stringToBoolean } from "../helpers/dds.helpers";
+import { Component, Input, OnInit } from '@angular/core';
+import { DdsComponent } from '../helpers/dds.component';
+import { stringToBoolean } from '../helpers/dds.helpers';
 
 @Component({
   selector: `dds-messagebar`,
-  templateUrl: `./messagebar.component.html`
+  templateUrl: `./messagebar.component.html`,
 })
 export class MessageBarComponent extends DdsComponent implements OnInit {
   @Input() title: string = ``;
   @Input() icon: string = ``;
   @Input() variant: string = `informative`;
   @Input() dismissible: any = `true`;
-  @Input() layout: string = "contextual";
-  //   @Input() layout: "contextual" | "global" = "contextual";
+  @Input() layout: string = 'contextual';
 
   // @ts-ignore
   ngOnInit(): void {
@@ -21,16 +20,16 @@ export class MessageBarComponent extends DdsComponent implements OnInit {
     this.ddsInitializer = `MessageBar`;
     if (!this.icon) {
       switch (this.variant) {
-        case "informative":
+        case 'informative':
           this.icon = `alert-info-cir`;
           break;
-        case "success":
+        case 'success':
           this.icon = `alert-check-cir`;
           break;
-        case "warning":
+        case 'warning':
           this.icon = `alert-notice`;
           break;
-        case "error":
+        case 'error':
           this.icon = `alert-error`;
           break;
       }
@@ -43,6 +42,6 @@ export class MessageBarComponent extends DdsComponent implements OnInit {
   };
 
   open = (e: any) => {
-    if (this.ddsComponent) this.ddsComponent.openMessageBar();
+    if (this.ddsComponent) this.ddsComponent.showMessageBar();
   };
 }

@@ -3,18 +3,19 @@ import {
   EventEmitter,
   Input,
   AfterViewInit,
-  Output
-} from "@angular/core";
-import { DdsComponent } from "../helpers/dds.component";
+  Output,
+} from '@angular/core';
+import { DdsComponent } from '../helpers/dds.component';
 
 @Component({
-  selector: "dds-tag",
-  templateUrl: "./tag.component.html"
+  selector: 'dds-tag',
+  templateUrl: './tag.component.html',
 })
 export class TagComponent extends DdsComponent implements AfterViewInit {
   @Output() onDimiss: EventEmitter<string> = new EventEmitter<string>();
   @Input() icon: string = ``;
   @Input() value: string = ``;
+  @Input() srDismiss: string = ``;
 
   // @ts-ignore
   ngOnInit() {
@@ -33,7 +34,7 @@ export class TagComponent extends DdsComponent implements AfterViewInit {
         ? thisText
         : {
             value: this.value,
-            text: this.ddsElement.querySelector(`button`).innerText.trim()
+            text: this.ddsElement.querySelector(`button`).innerText.trim(),
           };
       this.onDimiss.emit(valueToEmit);
     });

@@ -31,7 +31,7 @@
       </div>
       <div class="screens-content">
         <router-outlet></router-outlet>
-        <br>
+        <br />
         <dds-button>
           Reset
           <i class="dds__icon dds__icon--search dds__button__icon--end"></i>
@@ -47,15 +47,9 @@
           <i class="dds__icon dds__icon--search dds__button__icon--start"></i>
           Reset
         </dds-button>
-        <dds-button>
-          Default
-        </dds-button>
-        <dds-button classList="dds__button--md">
-          Medium
-        </dds-button>
-        <dds-button classList="dds__button--sm">
-          Small
-        </dds-button>
+        <dds-button> Default </dds-button>
+        <dds-button classList="dds__button--md"> Medium </dds-button>
+        <dds-button classList="dds__button--sm"> Small </dds-button>
         <dds-button classList="dds__button--mini">
           <i class="dds__icon dds__icon--search dds__button__icon--start"></i>
           Mini
@@ -67,7 +61,14 @@
         <app-card [title]="'Search'" [icon]="'search'"></app-card>
         <app-card [title]="'User'" [icon]="'user'"></app-card>
 
+        <!-- message-bar -->
+        <dds-messagebar classList="dds__message-bar--center"> </dds-messagebar>
+        <dds-messagebar classList="dds__message-bar--warning"> </dds-messagebar>
+        <dds-messagebar classList="dds__message-bar--error"> </dds-messagebar>
 
+        <br />
+        <!-- tag -->
+        <dds-tag classList="dds__tag--md" icon="check"> Medium </dds-tag>
       </div>
     </div>
   </div>

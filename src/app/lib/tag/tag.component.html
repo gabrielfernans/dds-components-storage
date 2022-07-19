@@ -1,15 +1,19 @@
 <div
-  id="{{elementId}}"
+  id="{{ elementId }}"
   data-dds="tag"
-  class="dds__tag {{classList}}"
+  class="dds__tag {{ classList }}"
   [attr.data-value]="value"
+  data_dimiss="true"
+  data-sr-dismiss="dismiss"
 >
-  <button>
-    <i
-      *ngIf="icon"
-      class="dds__icon dds__icon--{{icon}}"
-      aria-hidden="true"
-    ></i>
-    <ng-content></ng-content>
-  </button>
+  <div>
+    <button>
+      <i
+        *ngIf="icon"
+        class="dds__icon dds__icon--{{ icon }}"
+        aria-hidden="true"
+      ></i>
+      <ng-content></ng-content>
+    </button>
+  </div>
 </div>
