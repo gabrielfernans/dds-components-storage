@@ -1,5 +1,38 @@
-::ng-deep .dds__side-nav__wrapper {
-  background: white;
-  position: sticky;
-  height: calc(100vh) !important;
+.sidenav-container {
+  display: flex;
+  flex-direction: column;
+  width: 3.75rem;
+  height: calc(100vh - (0.6rem + 62px));
+  background-color: var(--background-primary);
+  transition: width 0.3s;
+  overflow-x: hidden;
+
+  .sidenav-content {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  &.opened {
+    width: 18rem;
+  }
+
+  .sidenav-footer {
+    display: flex;
+    width: 100%;
+    margin-top: auto;
+
+    button {
+      margin-left: auto;
+      width: 3.75rem;
+      height: 3.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      border: none;
+      color: var(--primary-blue);
+      cursor: pointer;
+      padding: 0;
+    }
+  }
 }

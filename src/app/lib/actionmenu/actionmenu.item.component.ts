@@ -6,22 +6,22 @@ import {
   Output,
   EventEmitter,
   OnInit,
-  OnDestroy
-} from "@angular/core";
+  OnDestroy,
+} from '@angular/core';
 import {
   setElementId,
   stringToBoolean,
   hasChanges,
   ddsIcon,
-  ddsLink
-} from "../helpers/dds.helpers";
-import { MenuService, toState } from "./menu.service";
-import { Subscription } from "rxjs";
+  ddsLink,
+} from '../helpers/dds.helpers';
+import { MenuService, toState } from './menu.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: `dds-actionmenu-item`,
   templateUrl: `./actionmenu.item.component.html`,
-  styleUrls: [`./actionmenu.item.component.scss`]
+  styleUrls: [`./actionmenu.item.component.scss`],
 })
 export class ActionMenuItemComponent implements OnChanges, OnInit, OnDestroy {
   @Input() id: string = ``;
@@ -32,7 +32,7 @@ export class ActionMenuItemComponent implements OnChanges, OnInit, OnDestroy {
   @Input() disabled: any = false;
   @Input() checkbox: any = false;
   @Input() checked: any = false;
-  @Input() value: any = "";
+  @Input() value: any = '';
   @Output() onChecked: EventEmitter<string> = new EventEmitter<string>();
   @Output() onClicked: EventEmitter<string> = new EventEmitter<string>();
   public isSelected: boolean = false;
@@ -70,7 +70,6 @@ export class ActionMenuItemComponent implements OnChanges, OnInit, OnDestroy {
   public onClick() {
     if (!this.disabled) {
       this.menuState.changeState(toState.closed);
-      console.log(this.onClicked);
       this.onClicked.emit(this.value);
     }
   }

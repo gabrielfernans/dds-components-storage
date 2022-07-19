@@ -10,6 +10,7 @@
     flex: 1 1 auto;
     position: relative; /* ?? */
     overflow-y: auto;
+    overflow-x: hidden;
     background-color: var(--background-grey);
     .sidenav-container {
       position: sticky;
@@ -20,7 +21,7 @@
       // position: absolute;
       margin-left: 120px;
       flex-grow: 1;
-      height: 100vh;
+      height: calc(100vh - (0.6rem + 62px));
       width: 75vw;
 
       .breadcrumb-container {

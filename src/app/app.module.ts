@@ -68,7 +68,6 @@ import { TooltipComponent } from './lib/tooltip/tooltip.component';
 import { IsSelectedDirective } from './lib/helpers/isselected.directive';
 import { MainLayoutComponent } from './core/layout/main-layout/main-layout.component';
 import { NavComponent } from './core/layout/nav/nav.component';
-import { OldLayoutComponent } from './core/layout/old-layout/old-layout.component';
 import { SearchComponent } from './pages/search/search.component';
 import { CardComponent } from './lib/card/card.component';
 
@@ -168,7 +167,6 @@ const directives = [IsSelectedDirective];
     ...directives,
     MainLayoutComponent,
     NavComponent,
-    OldLayoutComponent,
     SearchComponent,
     CardComponent,
   ],
