@@ -37,6 +37,7 @@
       [class.dds__input-text__icon-spacing--start]="iconStart"
       (keyup)="handleKeyup($event)"
     />
+
     <ng-container *ngFor="let icon of iconList; index as i">
       <i
         tabindex="{{ iconClickable ? 0 : -1 }}"
@@ -55,6 +56,7 @@
       *ngIf="button"
       type="submit"
       class="dds__button dds__button--primary dds__button--lg"
+      (click)="handleButtonClick($event)"
       >
       <i class="dds__icon dds__icon--{{ buttonIcon }}"></i>
       {{ button }}

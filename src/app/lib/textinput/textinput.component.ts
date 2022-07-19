@@ -5,6 +5,7 @@ import {
   EventEmitter,
   OnChanges,
 } from '@angular/core';
+import { CardComponent } from '../card/card.component';
 import { DdsComponent } from '../helpers/dds.component';
 import { debounce, pascalDash, stringToBoolean } from '../helpers/dds.helpers';
 
@@ -84,13 +85,22 @@ export class TextInputComponent extends DdsComponent implements OnChanges {
 
   handleKeyupFinal(e: any) {
     if(e.key === 'Enter') {
+      alert(this.ddsElement.querySelector('input').value)
       this.onKeyup.emit(
         this.ddsElement.querySelector(`input`).value || undefined
       );
       }
   }
 
+  handleButtonClick(e:any) {
+    alert(this.ddsElement.querySelector(`input`).value)
+  }
+
   public handleKeyup = debounce((e: any) => this.handleKeyupFinal(e));
+
+  applyCssError(field:any) {
+    console.log(field)
+  }
 
   ngOnChanges() {
     this.processIcons();
