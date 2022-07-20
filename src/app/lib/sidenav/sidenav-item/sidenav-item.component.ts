@@ -24,12 +24,13 @@ export class SidenavItemComponent implements OnInit {
     } else {
       if (this.opened === false) {
         this.switchState.emit();
+      } else {
+        this.item.expanded = !this.item.expanded;
       }
     }
   }
 
   emitEvent(): void {
-    this.item.expanded = false;
     this.switchState.emit();
   }
 

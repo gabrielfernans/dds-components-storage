@@ -1,12 +1,13 @@
 <div class="sidenav-item-container">
   <div
     class="sidenav-item-content"
-    (click)="item.expanded = !item.expanded; handleClick()"
+    (click)="handleClick()"
     [ngClass]="{
       active: isActive(item),
       opened: opened,
-      'child-group': child,
-      'child-page': child && item.type === 'page'
+      'child-group': child && item.type === 'group' && opened,
+      'child-page': child && item.type === 'page' && opened,
+      expanded: item.expanded && opened
     }"
   >
     <div
