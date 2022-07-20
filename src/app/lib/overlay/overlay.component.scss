@@ -3,7 +3,7 @@
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  background: rgba(14, 14, 14, 0.45);
+  background: var(--overlay-grey-dark);
   backdrop-filter: blur(40px);
   position: fixed;
   top: 0;
