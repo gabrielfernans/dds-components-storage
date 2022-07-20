@@ -1,17 +1,22 @@
-<div class="container">
+<ng-container *ngIf="closeIcon">
   <dds-overlay></dds-overlay>
   <div class="notification-layout">
-    <div class="header_content">
-      <div class="title-max">Delete Document</div>
-      <i class="dds__icon dds__icon--close-x" (click)="clicked()"></i>
-    </div>
+    <ng-container>
+      <div class="header_content">
+        <div class="title-max">Delete Document</div>
+        <i class="dds__icon dds__icon--close-x" (click)="toggle()"></i>
+      </div>
+    </ng-container>
     <div class="title-min">Do you want to delete this document?</div>
-    <div class="time-now">Today, 9:34 am</div>
+    <div class="time-now">{{ timeStamp }}</div>
     <div class="buttons-notification">
       <dds-button classList="dds__button--sm dds__button--secondary">
         Cancel
       </dds-button>
-      <dds-button classList="dds__button--sm"> Delete </dds-button>
+      <dds-button classList="dds__button--sm" (click)="toggle()">
+        Delete
+      </dds-button>
     </div>
   </div>
-</div>
+  <ng-content></ng-content>
+</ng-container>

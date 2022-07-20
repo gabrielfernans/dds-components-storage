@@ -1,25 +1,30 @@
-import { Component, Input } from "@angular/core";
-import { DdsComponent } from "../helpers/dds.component";
-import { stringToBoolean } from "../helpers/dds.helpers";
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { DdsComponent } from '../helpers/dds.component';
+import { stringToBoolean } from '../helpers/dds.helpers';
 
 @Component({
-  selector: "dds-button",
-  templateUrl: "./button.component.html",
-  styleUrls: ["./button.component.scss"]
+  selector: 'dds-button',
+  templateUrl: './button.component.html',
+  styleUrls: ['./button.component.scss'],
 })
 export class ButtonComponent extends DdsComponent {
   @Input() ariaLabel: string = ``;
   @Input() action: string = ``; // for "attaching" the button to an ActionMenu.  Experimental.
   @Input() type: string = `text`;
   @Input() disabled: any = `false`;
-  
+  @Output() buttonClick = new EventEmitter();
+
   override ngOnInit(): void {
     super.ngOnInit();
     this.disabled = stringToBoolean(this.disabled);
   }
 
   clicked() {
-    alert("Clicked works!")
+    alert('Clicked works!');
+  }
+
+  displayButton() {
+    this.disabled = this.disabled == true ? false : true;
+    this.buttonClick.emit(this.disabled);
   }
 }
- 
