@@ -34,8 +34,36 @@ export class SidenavItemComponent implements OnInit {
     this.switchState.emit();
   }
 
-  isActive(item: ISidenavItem): boolean | void {
+  isActive(item: ISidenavItem): boolean {
     if (this.currentRoute === '') this.currentRoute = '/';
-    return item.route === this.currentRoute;
+    let value: any = false;
+
+    if (item.route === this.currentRoute) {
+      value = true;
+    } else {
+      if (item.childs) {
+        item.childs.forEach((child) => {
+          if (this.isActiveRecursive(child) === true) {
+            value = this.isActiveRecursive(child);
+          }
+        });
+      }
+    }
+    // console.log(value);
+    return value;
+  }
+
+  isActiveRecursive(item: ISidenavItem): boolean | undefined {
+    if (item.route === this.currentRoute) {
+      return true;
+    } else {
+      if (item.childs) {
+        item.childs.forEach((child) => {
+          if (this.isActiveRecursive(child) === true) {
+            return this.isActiveRecursive(child);
+          }
+        });
+      }
+    }
   }
 }
