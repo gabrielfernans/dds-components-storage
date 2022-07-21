@@ -31,8 +31,13 @@ export class NotificationComponent extends DdsComponent implements OnInit {
   }
 
   updatetime() {
-    const data = new Date();
-    const time = data.toLocaleTimeString('pt-br', { timeZone: 'UTC' });
-    this.timeStamp = 'Today, ' + time;
+    const date = new Date();
+    this.timeStamp =
+      'Today, ' +
+      date.toLocaleTimeString('en-US', {
+        timeStyle: 'short',
+        hour12: true,
+        numberingSystem: 'latn',
+      });
   }
 }
