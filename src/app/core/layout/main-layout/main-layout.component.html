@@ -62,9 +62,26 @@
         <app-card [title]="'User'" [icon]="'user'"></app-card>
 
         <!-- message-bar -->
-        <dds-messagebar classList="dds__message-bar--center"></dds-messagebar>
-        <dds-messagebar classList="dds__message-bar--warning"></dds-messagebar>
-        <dds-messagebar classList="dds__message-bar--error"></dds-messagebar>
+        <dds-messagebar
+          classList="dds__message-bar--center"
+          [title]="'Notice: '"
+        >
+          You have a new verification email!
+        </dds-messagebar>
+        <dds-messagebar
+          classList="dds__message-bar--warning"
+          [variant]="'warning'"
+          [title]="'Attention: '"
+        >
+          You have a new verification email!
+        </dds-messagebar>
+        <dds-messagebar
+          classList="dds__message-bar--error"
+          [title]="'Error: '"
+          [variant]="'error'"
+        >
+          You have a new error.
+        </dds-messagebar>
         <br />
         <!-- tag -->
         <dds-tag classList="dds__tag--sm" icon="check"> Small </dds-tag>

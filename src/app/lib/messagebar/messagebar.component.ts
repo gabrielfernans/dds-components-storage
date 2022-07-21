@@ -5,6 +5,7 @@ import { stringToBoolean } from '../helpers/dds.helpers';
 @Component({
   selector: `dds-messagebar`,
   templateUrl: `./messagebar.component.html`,
+  styleUrls: ['./messagebar.component.scss'],
 })
 export class MessageBarComponent extends DdsComponent implements OnInit {
   @Input() title: string = ``;

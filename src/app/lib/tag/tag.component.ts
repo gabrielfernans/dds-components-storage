@@ -10,6 +10,7 @@ import { DdsComponent } from '../helpers/dds.component';
 @Component({
   selector: 'dds-tag',
   templateUrl: './tag.component.html',
+  styleUrls: ['./tag.component.scss'],
 })
 export class TagComponent extends DdsComponent implements AfterViewInit {
   @Output() onDimiss: EventEmitter<string> = new EventEmitter<string>();
