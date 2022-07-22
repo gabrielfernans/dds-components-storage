@@ -20,6 +20,7 @@ export class DropdownComponent extends DdsComponent implements OnChanges {
   @Input() groups: any;
   @Input() useBackend: any = `false`;
   @Input() warning: string = ``;
+  @Input() dataSelection:string = `single`
   @Output() onKeyUp: EventEmitter<string> = new EventEmitter<string>();
   @Output() optionSelected: EventEmitter<object> = new EventEmitter<object>();
   @Output() optionDeselected: EventEmitter<object> = new EventEmitter<object>();

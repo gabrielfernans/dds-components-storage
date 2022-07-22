@@ -17,6 +17,37 @@
       </div>
       <div class="screens-content">
         <router-outlet></router-outlet>
+
+        <dds-dropdown
+        groups="[
+        {'name': 'groupName1', 'options': [{'name': 'nameOption1', 'hidden': false}, {'name': 'nameOption2'}]},
+        {'name': 'groupName2', 'options': [{'name': 'nameOption3'}, {'name': 'nameOption4'}]}
+        ]"
+        dataSelection="multiple"
+        ></dds-dropdown>
+
+        <dds-dropdown
+        label="Dropdown Label"
+        helper="Dropdown Helper"
+        groups="[
+        {'options': [{'name':'option1'}, {'name': 'option2'}] }
+        ]"
+        ></dds-dropdown>
+
+        <dds-dropdown
+        groups="[
+        {'options': [{'name':'England'}, {'name': 'Brazil'}] }
+        ]"
+        dataSelection="multiple"
+        ></dds-dropdown>
+
+        <dds-dropdown
+        groups="[
+        {'options': [{'name':'option1'}, {'name': 'option2'}] }
+        ]"
+        warning="Warning"
+        ></dds-dropdown>
+
       </div>
     </div>
   </div>
