@@ -24,7 +24,7 @@
       <span>{{ item?.title }}</span>
     </div>
     <div class="item-content-chevron" *ngIf="opened && item?.type === 'group'">
-      <ng-container *ngIf="item?.childs">
+      <ng-container *ngIf="item?.children">
         <i
           *ngIf="!item?.expanded"
           class="dds__icon dds__icon--chevron-down"
@@ -33,8 +33,8 @@
       </ng-container>
     </div>
   </div>
-  <ng-container *ngIf="item?.childs && opened && item?.expanded">
-    <ng-container *ngFor="let child of item?.childs">
+  <ng-container *ngIf="item?.children && opened && item?.expanded">
+    <ng-container *ngFor="let child of item?.children">
       <dds-sidenav-item
         [item]="child"
         [opened]="opened"

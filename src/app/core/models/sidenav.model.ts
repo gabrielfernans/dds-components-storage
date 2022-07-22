@@ -8,5 +8,5 @@ export interface ISidenavItem {
   route?: string;
   active?: boolean;
   disabled?: boolean;
-  childs?: ISidenavItem[] | [];
+  children?: ISidenavItem[] | [];
 }

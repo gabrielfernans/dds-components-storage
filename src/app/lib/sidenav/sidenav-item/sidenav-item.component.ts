@@ -36,34 +36,31 @@ export class SidenavItemComponent implements OnInit {
 
   isActive(item: ISidenavItem): boolean {
     if (this.currentRoute === '') this.currentRoute = '/';
-    let value: any = false;
-
-    if (item.route === this.currentRoute) {
-      value = true;
-    } else {
-      if (item.childs) {
-        item.childs.forEach((child) => {
-          if (this.isActiveRecursive(child) === true) {
-            value = this.isActiveRecursive(child);
-          }
-        });
-      }
-    }
-    // console.log(value);
-    return value;
+    return this.findNode(this.currentRoute, item);
   }
 
-  isActiveRecursive(item: ISidenavItem): boolean | undefined {
-    if (item.route === this.currentRoute) {
+  findNode(route: any, currentNode: any): any {
+    var i, currentChild, result;
+
+    if (route == currentNode.route) {
       return true;
     } else {
-      if (item.childs) {
-        item.childs.forEach((child) => {
-          if (this.isActiveRecursive(child) === true) {
-            return this.isActiveRecursive(child);
-          }
-        });
+      // Use a for loop instead of forEach to avoid nested functions
+      // Otherwise "return" will not work properly
+      for (i = 0; i < currentNode?.children?.length; i += 1) {
+        currentChild = currentNode?.children[i];
+
+        // Search in the current child
+        result = this.findNode(route, currentChild);
+
+        // Return the result if the node has been found
+        if (result !== false) {
+          return true;
+        }
       }
+
+      // The node has not been found and we have no more options
+      return false;
     }
   }
 }

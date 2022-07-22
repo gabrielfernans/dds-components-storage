@@ -76,7 +76,7 @@ const MENU_ITEMS: ISidenavItem[] = [
     type: 'group',
     expanded: false,
     icon: 'objects',
-    childs: [
+    children: [
       {
         title: 'Pagination',
         route: 'pagination',
@@ -96,13 +96,13 @@ const MENU_ITEMS: ISidenavItem[] = [
     type: 'group',
     icon: 'search',
     expanded: false,
-    childs: [
+    children: [
       {
         title: 'Search sub-group',
         type: 'group',
         icon: 'search',
         expanded: false,
-        childs: [
+        children: [
           {
             title: 'Search page',
             route: 'search',
