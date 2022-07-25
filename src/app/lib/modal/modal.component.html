@@ -1,9 +1,18 @@
+<br />
+<br />
+<button
+  class="dds__button dds__button--secondary dds__button--md"
+  id="elementId + 'Trigger'"
+  type="button"
+>
+  EXAMPLE
+</button>
 <div
   [id]="elementId"
   role="dialog"
   [attr.data-trigger]="'#' + elementId + 'Trigger'"
   data-dds="modal"
-  class="dds__modal {{classList}}"
+  class="dds__modal {{ classList }}"
   [attr.aria-labelledby]="elementId + 'Title'"
 >
   <div class="dds__modal__content">
@@ -20,7 +29,3 @@
     </div>
   </div>
 </div>
-<!-- Button trigger modal -->
-<a #triggerContainer [id]="elementId + 'Trigger'">
-  <ng-content select="[modal-trigger]"></ng-content>
-</a>

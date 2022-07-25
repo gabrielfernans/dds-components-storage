@@ -17,7 +17,14 @@
       </div>
       <div class="screens-content">
         <router-outlet></router-outlet>
-        <dds-textarea [title]="'TESTE1'" [maxLength]="'10'"></dds-textarea>
+
+        <!-- textarea -->
+        <dds-textarea [maxLength]="'10'">
+          <div label-text>Label Example</div>
+          <div helper-text>Helper Text Example</div>
+        </dds-textarea>
+        <!-- modal -->
+        <dds-modal modal-title="'PFVR FUNCIONA'"> </dds-modal>
       </div>
     </div>
   </div>

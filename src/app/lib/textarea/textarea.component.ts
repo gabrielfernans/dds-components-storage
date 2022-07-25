@@ -12,7 +12,7 @@ export class TextAreaComponent extends DdsComponent {
   @ViewChild('srContainer') srContainer!: ElementRef;
   @Input() isRequired: string = `false`;
   @Input() maxLength: string = ``;
-  @Input() title: string = ``;
+  @Input() labeltext: string = ``;
   public defaultText: string = ``;
   public srText: string = ``;
   public textAreaId: string = ``;

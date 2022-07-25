@@ -1,7 +1,7 @@
 <div
   role="region"
   [id]="elementId"
-  class="dds__accordion {{classList}}"
+  class="dds__accordion {{ classList }}"
   data-dds="accordion"
   [attr.data-independent]="independent"
   [attr.data-sr-collapse-all]="items.length + ' ' + texts.itemsCollapsed"
@@ -17,5 +17,5 @@
       {{texts.collapseAll}}
     </button>
   </div>
-  <ng-content select="dds-accordion-item"></ng-content>
+  <ng-content ="dds-accordion-item"></ng-content>
 </div>
