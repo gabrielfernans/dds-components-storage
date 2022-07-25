@@ -1,9 +1,12 @@
 <div
   id="{{ elementId }}"
-  class="dds__text-area__container {{classList}}"
+  class="dds__text-area__container {{ classList }}"
   data-dds="text-area"
 >
   <div class="dds__text-area__header">
+    <label id="text-area-label-634145076" for="text-area-control-634145076">{{
+      title
+    }}</label>
     <label id="{{ labelId }}" for="{{ textAreaId }}">
       <ng-content select="[label-text]"></ng-content>
     </label>
@@ -22,14 +25,13 @@
       [attr.aria-labelledby]="helperId"
       required="{{ states.required }}"
     >
-{{ defaultText }}
     </textarea>
     <small id="{{ helperId }}" class="dds__input-text__helper">
       <ng-content select="[helper-text]"></ng-content>
     </small>
-    <div class="dds__invalid-feedback">
-      <ng-content select="[error-text]"></ng-content>
-    </div>
+    <small id="text-area-error-695808533" class="dds__invalid-feedback"
+      >Error Message</small
+    >
   </div>
 </div>
 <div tabindex="-1" #textContainer hidden>

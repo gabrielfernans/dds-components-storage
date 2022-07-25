@@ -4,13 +4,15 @@ import { Uuid, stringToBoolean } from '../helpers/dds.helpers';
 
 @Component({
   selector: `dds-textarea`,
-  templateUrl: `./textarea.component.html`
+  templateUrl: `./textarea.component.html`,
+  styleUrls: [`./textarea.component.scss`],
 })
 export class TextAreaComponent extends DdsComponent {
   @ViewChild('textContainer') textContainer!: ElementRef;
   @ViewChild('srContainer') srContainer!: ElementRef;
   @Input() isRequired: string = `false`;
   @Input() maxLength: string = ``;
+  @Input() title: string = ``;
   public defaultText: string = ``;
   public srText: string = ``;
   public textAreaId: string = ``;
@@ -34,6 +36,6 @@ export class TextAreaComponent extends DdsComponent {
     setTimeout(() => {
       this.defaultText = this.textContainer?.nativeElement.innerText;
       this.srText = this.srContainer?.nativeElement.innerText;
-    })
+    });
   }
 }
