@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { ISidenavItem } from '../../models/sidenav.model';
+import { ModalComponent } from 'src/app/lib/modal/modal.component';
 
 @Component({
   selector: 'app-main-layout',
@@ -16,6 +17,7 @@ import { ISidenavItem } from '../../models/sidenav.model';
 })
 export class MainLayoutComponent implements OnInit {
   @ViewChild(`breadcrumb`) breadcrumb!: BreadcrumbComponent;
+  @ViewChild(`modal`) modal!: ModalComponent;
   public menuTags: Array<string> = [];
   public menuSorted: Array<any> = [];
   public menuItems: any = MENU_ITEMS;

@@ -1,3 +1,4 @@
 .dds__modal {
-  background-color: red;
+  background-color: var(--overlay-grey-dark);
+  backdrop-filter: blur(10px);
 }

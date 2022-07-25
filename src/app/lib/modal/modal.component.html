@@ -1,12 +1,3 @@
-<br />
-<br />
-<button
-  class="dds__button dds__button--secondary dds__button--md"
-  id="elementId + 'Trigger'"
-  type="button"
->
-  EXAMPLE
-</button>
 <div
   [id]="elementId"
   role="dialog"
@@ -25,7 +16,12 @@
       <ng-content select="[modal-body]"></ng-content>
     </div>
     <div class="dds__modal__footer">
-      <ng-content select="[modal-footer]"></ng-content>
+      <button class="dds__button dds__button--secondary dds__button--md">
+        <ng-content select="[button-title-primary]"></ng-content>
+      </button>
+      <button class="dds__button dds__button--md">
+        <ng-content select="[button-title-secondary]"></ng-content>
+      </button>
     </div>
   </div>
 </div>

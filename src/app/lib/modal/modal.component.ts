@@ -78,7 +78,7 @@ export class ModalComponent extends DdsComponent {
   //   this.ddsComponent.close();
   // }
 
-  // open() {
-  //   this.ddsComponent.open();
-  // }
+  open() {
+    this.ddsComponent.open();
+  }
 }

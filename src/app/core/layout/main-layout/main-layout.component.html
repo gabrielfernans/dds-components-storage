@@ -24,7 +24,22 @@
           <div helper-text>Helper Text Example</div>
         </dds-textarea>
         <!-- modal -->
-        <dds-modal modal-title="'PFVR FUNCIONA'"> </dds-modal>
+        <dds-modal #modal>
+          <div modal-title>Modal Headline</div>
+          <div modal-body>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </div>
+          <div button-title-primary>Cancel</div>
+          <div button-title-secondary>Visualize</div>
+        </dds-modal>
+        <!-- button modal -->
+        <button
+          class="dds__button dds__button--secondary dds__button--md"
+          (click)="this.modal.open()"
+        >
+          Open modal
+        </button>
       </div>
     </div>
   </div>

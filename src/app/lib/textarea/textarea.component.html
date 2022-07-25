@@ -4,29 +4,29 @@
   data-dds="text-area"
 >
   <div class="dds__text-area__header">
-    <label id="{{ labelId }}" for="{{ textAreaId }}">
+    <label
+      id="text-area-label-{{ elementId }}"
+      for="text-area-control-{{ elementId }}"
+    >
       <ng-content select="[label-text]"></ng-content>
     </label>
-    <span
-      class="dds__text-area__counter"
-      [attr.data-sr-label]="srText || '{remaining} characters remaining'"
-    ></span>
   </div>
   <div class="dds__text-area__wrapper">
     <textarea
       class="dds__text-area"
-      name="{{ textAreaId }}"
+      name="'text-area-control-name-{{ elementId }}'"
       id="{{ textAreaId }}"
       [attr.data-maxlength]="maxLength"
-      [attr.aria-required]="states.required"
-      [attr.aria-labelledby]="helperId"
-      required="{{ states.required }}"
-    >
-    </textarea>
+      [attr.aria-required]="true"
+      [attr.aria-labelledby]="
+        'text-area-label-{{elementId}} text-area-helper-{{elementId}}'
+      "
+      required=""
+    ></textarea>
     <small id="{{ helperId }}" class="dds__input-text__helper">
       <ng-content select="[helper-text]"></ng-content>
     </small>
-    <small id="text-area-error-695808533" class="dds__invalid-feedback"
+    <small id="text-area-error-{{ elementId }}" class="dds__invalid-feedback"
       >Error Message</small
     >
   </div>

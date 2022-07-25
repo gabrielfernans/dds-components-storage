@@ -12,7 +12,6 @@ export class TextAreaComponent extends DdsComponent {
   @ViewChild('srContainer') srContainer!: ElementRef;
   @Input() isRequired: string = `false`;
   @Input() maxLength: string = ``;
-  @Input() labeltext: string = ``;
   public defaultText: string = ``;
   public srText: string = ``;
   public textAreaId: string = ``;
@@ -25,7 +24,7 @@ export class TextAreaComponent extends DdsComponent {
   override ngOnInit() {
     super.ngOnInit();
     this.ddsInitializer = `TextArea`;
-    this.textAreaId = `${this.ddsInitializer}-textarea${Uuid()}`;
+    this.textAreaId = `${this.ddsInitializer}-control${Uuid()}`;
     this.labelId = `${this.ddsInitializer}-label${Uuid()}`;
     this.helperId = `${this.ddsInitializer}-helper${Uuid()}`;
     this.states.required = stringToBoolean(this.isRequired);
