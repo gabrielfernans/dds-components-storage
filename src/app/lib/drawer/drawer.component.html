@@ -9,9 +9,21 @@
   <div class="dds__drawer__container">
     <div class="dds__drawer__header">
       <button class="dds__drawer__close">{{backText}}</button>
+
     </div>
     <div class="dds__drawer__body">
+      <h3 class="dds__drawer__title">Drawer Title</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis
+        tempor enim, ut tincidunt turpis. Nulla libero eros, sollicitudin ac
+        enim a, rhoncus tempus nunc. Donec suscipit lectus in mattis pretium.
+        Aliquam massa nulla, porta id ante non, vestibulum scelerisque nibh.
+      </p>
       <ng-content></ng-content>
+    </div>
+    <div class="dds__drawer__footer">
+      <dds-button classList="dds__button--primary">Primary</dds-button>
+      <dds-button classList="dds__button--secondary">Secondary</dds-button>
     </div>
   </div>
 </div>

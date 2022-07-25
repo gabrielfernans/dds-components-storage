@@ -17,6 +17,9 @@
       </div>
       <div class="screens-content">
         <router-outlet></router-outlet>
+
+        <dds-drawer #drawer></dds-drawer>
+        <button class="dds__button" (click)="this.drawer.open()">Open Drawer</button>
       </div>
     </div>
   </div>

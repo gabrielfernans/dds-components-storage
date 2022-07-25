@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { ISidenavItem } from '../../models/sidenav.model';
+import { DrawerComponent } from './../../../lib/drawer/drawer.component';
 
 @Component({
   selector: 'app-main-layout',
@@ -16,6 +17,7 @@ import { ISidenavItem } from '../../models/sidenav.model';
 })
 export class MainLayoutComponent implements OnInit {
   @ViewChild(`breadcrumb`) breadcrumb!: BreadcrumbComponent;
+  @ViewChild(`drawer`) drawer!: DrawerComponent;
   public menuTags: Array<string> = [];
   public menuSorted: Array<any> = [];
   public menuItems: any = MENU_ITEMS;
@@ -57,9 +59,15 @@ export class MainLayoutComponent implements OnInit {
         this.breadcrumb.data = this.bcData;
       }
     });
+
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
+
+
+
 }
 
 const MENU_ITEMS: ISidenavItem[] = [
